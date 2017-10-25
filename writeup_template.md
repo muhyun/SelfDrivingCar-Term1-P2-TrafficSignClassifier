@@ -27,9 +27,6 @@ This Udacity Self-Driving Car Nanodegree project is to implement a deep learning
 [image11]: ./images/new-signs-prob.png "top 5 predicted labels"
 [image12]: ./images/feature-images.png "output of feature map"
 
-## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
-
 ---
 Here is a link to my [project code](https://github.com/muhyun/SelfDrivingCar-Term1-P2-TrafficSignClassifier/blob/master/Traffic_Sign_Classifier.ipynb)
 
@@ -45,8 +42,6 @@ signs data set:
 * The number of unique classes/labels in the data set is 43.
 
 ![Traffic Signs][image7]
-
-####2. Include an exploratory visualization of the dataset.
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the datasets are distributed.
 
@@ -74,8 +69,6 @@ As a last step, I normalized the image data because large input values slows tra
 X_train_gray_normal = (X_train_gray.astype(np.float32)-128)/128
 ```
 
-####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
-
 My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
@@ -98,8 +91,6 @@ My final model consisted of the following layers:
  
 This deep neural network architecture is similar to LeNet-5; 2 convolutional layers and 3 fully connected layers. Softmax is used to classification.
 
-####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
-
 To train the model, I used an ....
 
 * learning rate : 0.001
@@ -110,8 +101,6 @@ To train the model, I used an ....
 * optimizaer : Adam
 
 While I was finding an optimal hyper-parameter, I changed learning rate from 0.001 to 0.01 without awaring the change. The accuracy dropped to 4~5% while 0.001 gave 80% or higher accuracy. To me, it looks like a small amount of change, but actually its impact was a lot. That was a good learning point.
-
-####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
 * training set accuracy of 0.998
@@ -133,15 +122,11 @@ With a simple LeNet-5 deep neural network architecture, data preprocessing, and 
  
 ### Test a Model on New Images
 
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
-
 Here are 9 German traffic signs that I found on the web:
 
 ![alt text][image10]
 
 I need to resize them down to 32x32, which give poor quality. Also, the seventh image might be difficult to classify because there is a noise (white square) within the sign.
-
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 Here are the results of the prediction:
 
@@ -158,8 +143,6 @@ Here are the results of the prediction:
 | Priority   			| Right of way at the next intersection         |
 
 The model was able to correctly guess 5 of the 9 traffic signs, which gives an accuracy of 55%. This compares favorably to the accuracy on the test set of 94%. It is not negligible gap, so it is required to analyze further to identify the root cause of this, and take an appropriate action such as data augmenting for further training. 
-
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 As one of investigation, let's take a look at the top5 softmax probabilities for each image.
 
