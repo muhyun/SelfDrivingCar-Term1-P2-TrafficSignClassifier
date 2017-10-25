@@ -74,12 +74,12 @@ My final model consisted of the following layers:
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
-| Convolution 5x5     	| 6 filters, 1x1 stride, valid padding, outputs 32x32x64 	|
+| Convolution 5x5     	| 6 filters, 1x1 stride, valid padding, outputs 28x28x6 	| 
 | RELU					|												|
-| Max pooling	      	| 2x2 kernel, 2x2 stride, outputs 16x16x64 				|
-| Convolution 5x5	    | 16 filters, 1x1 strides, valid padding, output     									|
+| Max pooling	      	| 2x2 kernel, 2x2 stride, outputs 14x14x6 				|
+| Convolution 5x5	    | 16 filters, 1x1 strides, valid padding, output 10x10x16	| 
 | RELU					|												|
-| Max pooling	      	| 2x2 kernel, 2x2 stride, outputs 16x16x64 				|
+| Max pooling	      	| 2x2 kernel, 2x2 stride, outputs 5x5x16 				|
 | Fully connected		| 120 neurons       									|
 | RELU					|												|
 | Dropout				| 50%												|
